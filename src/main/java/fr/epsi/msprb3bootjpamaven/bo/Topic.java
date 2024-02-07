@@ -2,6 +2,8 @@ package fr.epsi.msprb3bootjpamaven.bo;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "topics")
 public class Topic {
@@ -12,9 +14,11 @@ public class Topic {
 
     private String nom;
 
-    @ManyToOne
-    @JoinColumn(name = "plante_id")
-    private Plante plante;
+    @ManyToMany(mappedBy = "topics")
+    private List<Plante> plantes;
+
+    @OneToMany(mappedBy = "topic")
+    private List<Article> articles;
 
     public Topic() {
     }
@@ -35,11 +39,19 @@ public class Topic {
         this.nom = nom;
     }
 
-    public Plante getPlante() {
-        return plante;
+    public List<Plante> getPlantes() {
+        return plantes;
     }
 
-    public void setPlante(Plante plante) {
-        this.plante = plante;
+    public void setPlantes(List<Plante> plantes) {
+        this.plantes = plantes;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 }

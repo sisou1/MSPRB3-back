@@ -21,6 +21,8 @@ public class Utilisateur implements Serializable {
 
     @OneToMany(mappedBy = "utilisateur")
     private List<Plante> plantes;
+    @OneToMany(mappedBy = "utilisateur")
+    private List<Article> articles;
 
     public Utilisateur() {}
 
@@ -72,6 +74,12 @@ public class Utilisateur implements Serializable {
         this.plantes = plantes;
     }
 
-    // Constructeurs, getters et setters
-    // ...
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
 }

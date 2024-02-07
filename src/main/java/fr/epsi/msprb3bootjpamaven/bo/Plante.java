@@ -40,12 +40,21 @@ public class Plante implements Serializable {
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur;
 
-    @OneToMany(mappedBy = "plante")
+    @ManyToMany
+    @JoinTable(
+            name = "plante_topic",
+            joinColumns = @JoinColumn(name = "plante_id"),
+            inverseJoinColumns = @JoinColumn(name = "topic_id")
+    )
     private List<Topic> topics;
 
     @ManyToOne
     @JoinColumn(name = "categorie_id")
     private Categorie categorie;
+
+    @OneToMany(mappedBy = "plante")
+    private List<Image> images;
+
 
     // Constructeurs, getters et setters
     public Plante() {}
@@ -142,4 +151,13 @@ public class Plante implements Serializable {
     public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
+
 }
