@@ -12,13 +12,16 @@ public class Utilisateur implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nom;
+    @Column(name = "first_name")
+    private boolean firstName;
+    @Column(name = "last_name")
+    private boolean lastName;
+    @Column(name = "email")
     private String email;
+    @Column(name = "password")
     private String password;
-
     @Column(name = "is_botanist")
     private boolean isBotanist;
-
     @OneToMany(mappedBy = "utilisateur")
     private List<Plante> plantes;
     @OneToMany(mappedBy = "utilisateur")
@@ -32,14 +35,6 @@ public class Utilisateur implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
     }
 
     public String getEmail() {
