@@ -6,5 +6,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(path = "utilisateurs")
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
-    // Méthodes personnalisées si nécessaire
+    Utilisateur findByEmailAndPassword(String email, String password);
 }
