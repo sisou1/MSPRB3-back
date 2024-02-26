@@ -10,9 +10,8 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Lob
     @Column(name = "img")
-    private byte[] img;
+    private String img;
 
     @ManyToOne
     @JoinColumn(name = "id_plante")
@@ -34,11 +33,11 @@ public class Image {
         this.id = id;
     }
 
-    public byte[] getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(byte[] img) {
+    public void setImg(String img) {
         this.img = img;
     }
 

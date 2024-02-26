@@ -1,11 +1,16 @@
 package fr.epsi.msprb3bootjpamaven.bo;
 
+import fr.epsi.msprb3bootjpamaven.bo.listener.UtilisateurListener;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.Entity;
+
 @Entity
 @Table(name = "utilisateurs")
+@EntityListeners(UtilisateurListener.class)
 public class Utilisateur implements Serializable {
 
     @Id
@@ -13,9 +18,9 @@ public class Utilisateur implements Serializable {
     private Long id;
 
     @Column(name = "first_name")
-    private boolean firstName;
+    private String firstName;
     @Column(name = "last_name")
-    private boolean lastName;
+    private String lastName;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
@@ -77,4 +82,19 @@ public class Utilisateur implements Serializable {
         this.articles = articles;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 }
