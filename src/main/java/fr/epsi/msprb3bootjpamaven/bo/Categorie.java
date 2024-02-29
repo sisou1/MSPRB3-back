@@ -48,12 +48,4 @@ public class Categorie implements Serializable {
     public void setPlantes(List<Plante> plantes) {
         this.plantes = plantes;
     }
-
-    public List<Article> getArticles() {
-        return articles;
-    }
-
-    public void setArticles(List<Article> articles) {
-        this.articles = articles;
-    }
 }

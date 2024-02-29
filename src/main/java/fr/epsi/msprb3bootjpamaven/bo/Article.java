@@ -37,8 +37,6 @@ public class Article {
     // Constructeurs, getters et setters
     public Article() {}
 
-
-
     // Getters et Setters pour chaque attribut
     public Long getId() {
         return id;
@@ -62,14 +60,6 @@ public class Article {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Topic getTopic() {
-        return topic;
-    }
-
-    public void setTopic(Topic topic) {
-        this.topic = topic;
     }
 
     public Categorie getCategorie() {

@@ -66,16 +66,8 @@ public class Utilisateur implements Serializable {
         isBotanist = botanist;
     }
 
-    public List<Plante> getPlantes() {
-        return plantes;
-    }
-
     public void setPlantes(List<Plante> plantes) {
         this.plantes = plantes;
-    }
-
-    public List<Article> getArticles() {
-        return articles;
     }
 
     public void setArticles(List<Article> articles) {

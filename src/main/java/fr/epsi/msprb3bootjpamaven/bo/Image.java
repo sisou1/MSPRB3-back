@@ -48,12 +48,4 @@ public class Image {
     public void setPlante(Plante plante) {
         this.plante = plante;
     }
-
-    public Article getArticle() {
-        return article;
-    }
-
-    public void setArticle(Article article) {
-        this.article = article;
-    }
 }

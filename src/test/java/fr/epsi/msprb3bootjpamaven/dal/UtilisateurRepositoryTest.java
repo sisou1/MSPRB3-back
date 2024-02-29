@@ -22,7 +22,14 @@ public class UtilisateurRepositoryTest {
 
     @BeforeEach
     public void cleanUp() {
-        utilisateurRepository.deleteAllInBatch(); // Assurez-vous que la base de données est propre
+        // Désactiver la vérification des contraintes de clé étrangère
+        utilisateurRepository.disableForeignKeyChecks();
+
+        // Supprimer les utilisateurs
+        utilisateurRepository.deleteAll();
+
+        // Réactiver la vérification des contraintes de clé étrangère
+        utilisateurRepository.enableForeignKeyChecks();
     }
 
     @Test
