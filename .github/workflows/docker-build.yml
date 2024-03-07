@@ -22,5 +22,5 @@ jobs:
       - name: Build Docker Image  # Étape pour construire l'image Docker
         run: docker build -t lucasrogard/mspr-back:latest .  # Commande pour construire l'image Docker (à remplacer par votre propre nom d'utilisateur Docker Hub et nom d'image)
 
-      - name: Push Docker Image to Docker Hub  # Étape pour pousser l'image Docker vers Docker Hub
-        run: docker push lucasrogard/mspr-back:latest  # Commande pour pousser l'image Docker (à remplacer par votre propre nom d'utilisateur Docker Hub et nom d'image)
+      - name: Push Docker Image to Docker Hub
+        run: docker push lucasrogard/mspr-back:latest
