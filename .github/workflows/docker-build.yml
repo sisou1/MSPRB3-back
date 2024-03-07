@@ -24,3 +24,9 @@ jobs:
 
       - name: Push Docker Image to Docker Hub  # Étape pour pousser l'image Docker vers Docker Hub
         run: docker push lucasrogard/mspr-back:latest  # Commande pour pousser l'image Docker (à remplacer par votre propre nom d'utilisateur Docker Hub et nom d'image)
+
+      - name: Login to Heroku Container Registry  # Étape pour se connecter au registre de conteneurs Heroku
+        run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login --username=_ --password-stdin registry.heroku.com
+
+      - name: Push Docker Image to Heroku  # Étape pour pousser l'image Docker vers Heroku
+        run: docker push registry.heroku.com/arosaje-back/web  # Commande pour pousser l'image Docker (à remplacer par le nom de votre application Heroku)
