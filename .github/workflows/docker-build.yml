@@ -16,11 +16,11 @@ jobs:
       - name: Login to Docker Hub  # Étape pour se connecter à Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.lucasrogard }}  # Nom d'utilisateur Docker Hub (à remplacer par votre propre nom d'utilisateur Docker Hub)
-          password: ${{ secrets.dckr_pat_ac7e5P0K7AZgiRqMJnGImFdOkcY }}  # Mot de passe Docker Hub (à remplacer par votre propre mot de passe Docker Hub)
+          username: ${{ secrets.DOCKER_USERNAME }}  # Nom d'utilisateur Docker Hub (à remplacer par votre propre nom d'utilisateur Docker Hub)
+          password: ${{ secrets.DOCKER_PASSWORD }}  # Mot de passe Docker Hub (à remplacer par votre propre mot de passe Docker Hub)
 
       - name: Build Docker Image  # Étape pour construire l'image Docker
         run: docker build -t lucasrogard/mspr-back:latest .  # Commande pour construire l'image Docker (à remplacer par votre propre nom d'utilisateur Docker Hub et nom d'image)
 
-      - name: Push Docker Image to Docker Hub
-        run: docker push lucasrogard/mspr-back:latest
+      - name: Push Docker Image to Docker Hub  # Étape pour pousser l'image Docker vers Docker Hub
+        run: docker push lucasrogard/mspr-back:latest  # Commande pour pousser l'image Docker (à remplacer par votre propre nom d'utilisateur Docker Hub et nom d'image)
