@@ -1,4 +1,4 @@
-package fr.epsi.msprb3bootjpamaven.dal;
+package fr.epsi.msprb3bootjpamaven.repository;
 
 import fr.epsi.msprb3bootjpamaven.bo.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;

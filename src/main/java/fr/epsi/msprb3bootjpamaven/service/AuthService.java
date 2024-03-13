@@ -1,14 +1,12 @@
 package fr.epsi.msprb3bootjpamaven.service;
 
 import fr.epsi.msprb3bootjpamaven.bo.Utilisateur;
-import fr.epsi.msprb3bootjpamaven.dal.UtilisateurRepository;
+import fr.epsi.msprb3bootjpamaven.repository.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 // Dans AuthService.java
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 
 @Service
 public class AuthService {

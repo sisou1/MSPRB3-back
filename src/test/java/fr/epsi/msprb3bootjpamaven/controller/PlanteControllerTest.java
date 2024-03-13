@@ -1,8 +1,7 @@
 package fr.epsi.msprb3bootjpamaven.controller;
 
 import fr.epsi.msprb3bootjpamaven.bo.Plante;
-import fr.epsi.msprb3bootjpamaven.controller.PlanteController;
-import fr.epsi.msprb3bootjpamaven.dal.PlanteRepository;
+import fr.epsi.msprb3bootjpamaven.repository.PlanteRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

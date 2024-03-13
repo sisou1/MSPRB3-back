@@ -1,7 +1,7 @@
 package fr.epsi.msprb3bootjpamaven.service;
 
 import fr.epsi.msprb3bootjpamaven.bo.Utilisateur;
-import fr.epsi.msprb3bootjpamaven.dal.UtilisateurRepository;
+import fr.epsi.msprb3bootjpamaven.repository.UtilisateurRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

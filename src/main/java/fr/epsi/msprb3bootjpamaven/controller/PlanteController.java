@@ -1,7 +1,7 @@
 package fr.epsi.msprb3bootjpamaven.controller;
 
 import fr.epsi.msprb3bootjpamaven.bo.Plante;
-import fr.epsi.msprb3bootjpamaven.dal.PlanteRepository;
+import fr.epsi.msprb3bootjpamaven.repository.PlanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
