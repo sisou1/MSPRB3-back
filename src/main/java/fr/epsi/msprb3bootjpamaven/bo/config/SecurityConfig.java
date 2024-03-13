@@ -12,5 +12,4 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // ... autres beans nécessaires pour l'authentification ...
 }
