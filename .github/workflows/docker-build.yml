@@ -23,20 +23,3 @@ jobs:
         run: |
           docker build -t lucasrogard/mspr-back:latest .
           docker push lucasrogard/mspr-back:latest
-
-      - name: Login to Heroku Container Registry
-        run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login --username=_ --password-stdin registry.heroku.com
-
-      - name: Pull Docker Image from Docker Hub
-        run: docker pull lucasrogard/mspr-back:latest
-
-      - name: Tag Docker Image for Heroku Registry
-        run: docker tag lucasrogard/mspr-back:latest registry.heroku.com/arosaje-back/web
-
-      - name: Push Docker Image to Heroku
-        run: docker push registry.heroku.com/arosaje-back/web
-
-      - name: Release Heroku App
-        run: heroku container:release web --app arosaje-back
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
