@@ -1,0 +1,28 @@
+Pipeline CI/CD pour Docker Build et Test
+Introduction
+Le fichier docker-build.yml définit notre pipeline CI/CD pour le projet, automatisant les processus de build, de test et de déploiement à l'aide de GitHub Actions. Ce pipeline est conçu pour garantir la qualité du code, analyser les vulnérabilités et publier les images Docker vers Docker Hub.
+
+Structure du Pipeline
+Le pipeline est structuré en plusieurs étapes distinctes, chacune jouant un rôle crucial dans le processus de livraison continue :
+
+Étapes du Pipeline
+1. Checkout Repository
+Cette étape assure que les derniers fichiers du dépôt sont récupérés avant d'initier le processus de build.
+
+2. Checkstyle
+L'étape de Checkstyle vérifie la conformité du code aux standards définis, assurant ainsi une cohérence et une lisibilité du code maintenues.
+
+3. Build Docker image with Tests
+Cette étape construit une image Docker contenant l'application, intégrant également les tests unitaires pour valider le bon fonctionnement de l'application.
+
+4. Run Tests in Docker Container
+Les tests unitaires sont exécutés à l'intérieur d'un conteneur Docker pour garantir un environnement isolé et reproductible.
+
+5. Docker Save Image
+L'image Docker construite est sauvegardée dans un fichier image.tar, ce qui permet de stocker l'image pour des utilisations ultérieures ou des déploiements hors ligne.
+
+6. Security Scan
+Un scan de sécurité est effectué sur l'image Docker pour identifier et corriger les vulnérabilités potentielles avant tout déploiement en production.
+
+7. Push to Docker Hub
+L'image Docker est publiée sur Docker Hub, prête à être déployée dans des environnements de production après avoir passé avec succès toutes les étapes précédentes du pipeline.
