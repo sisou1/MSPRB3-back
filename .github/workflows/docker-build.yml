@@ -22,6 +22,30 @@ jobs:
       - name: Run Tests in Docker Container
         run: docker run lucasrogard/mspr-back:latest mvn test
 
+      - name: Docker Save Image
+        run: docker save lucasrogard/mspr-back:latest > image.tar
+
+  security-scan:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Start Clair
+        run: |
+          docker run -d --name clair --network host arminc/clair-db:latest
+          sleep 10s
+
+      - name: Scan Docker image with Clair
+        run: |
+          docker load < image.tar
+          docker run --network host --link clair:clair --rm arminc/clair-local-scan:v2.0.8 --clair="http://clair:6060" lucasrogard/mspr-back:latest
+
+      - name: Stop Clair
+        run: docker stop clair
+
   push-to-docker-hub:
     runs-on: ubuntu-latest
     needs: build-and-test
